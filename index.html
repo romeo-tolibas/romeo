@@ -1,0 +1,91 @@
+<?php
+	include "style.css";
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="images/logo.png">
+	<title>The Barkber Shop</title>
+</head>
+	<h2 id="home" style="text-align: center;"><a href="#home"></a></h2>
+<header>
+
+	<img src="images/logo.png" style="width: 100px;">
+	
+	<nav class="nav">
+		<a href="#about">About us</a>
+		<a href="#service">Services</a>
+		<a href=""> </a>
+
+
+	</nav>
+
+</header>
+
+
+<body>
+	<!-- HOME -->
+		<div class="img-box" style="width: 50%; margin:100px auto; box-shadow: none; height: 70%;">
+			<br>
+			<h2 id="home" style="text-align: center;"><a href="#home"></a>The Barkber Shop</h2>
+			<img src="images/logo.png" class="slider" style="box-shadow: none;">
+		</div>
+<hr>
+	
+	<h2 id="service"><a href="#service"></a></h2>
+	<div class="slider">
+
+		<div class="img-box">
+			<img src="images/dog.jpg" class="slider-img">
+
+			<p style="text-align: center; font-weight: bold; font-size: x-large;">SERVICES</p>
+		</div>
+
+	<p class="slider-desc" style="text-align: center;"></p>
+<hr>
+		<button class="btn" onclick="prev()"><</button>
+		<button class="btn" onclick="next()" style="float: right;">></button>
+	</div>
+
+	<!-- ABOUT US -->
+	<div class="about">
+	<h2 id="about"><a href="#about"></a>About Us</h2>
+	<p class="about">Mobile Pet Salon
+	Barkbershop is a convenient mobile pet salon that brings professional grooming services right to your doorstep. Designed for busy pet owners and pets who feel more comfortable at home, Barkbershop offers a stress free grooming experience without the hassle of travel or long waiting times.
+	Our services include bathing, hair trimming, nail clipping, ear cleaning, and overall hygiene care, all performed by trained and pet loving groomers. We use safe, high-quality products to ensure your pets not only look their best but feel their best too.
+	With Barkbershop, your furry friends get personalized care in a clean, calm, and familiar environment making grooming easier, safer, and more enjoyable for both pets and owners.</p>
+	</div>
+
+
+
+	<!-- FOOTER -->
+	<div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#service">Services</a></li>
+                <li class="list-inline-item"><a href="#about">About</a></li>
+                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+            </ul>
+            <p class="copyright">The Barkber Shop © 2026</p>
+        </footer>
+    </div>
+    <script>
+		const element = document.getElementById("home");
+
+		element.scrollIntoView({
+		  behavior: "smooth",
+		  block: "start",
+		  inline: "nearest"
+		});
+	</script>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>

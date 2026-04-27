@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="RecycledRags.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="buynow.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>The Barkber - Payment Method</title>
+</head>
+<body>
+
+    <div class="container">
+            <form onsubmit="return checkout(event)">
+                <div class="row">
+                    
+                	<div class="col">
+                		<h4>Pet Form & Payment</h4>
+
+                        <div class="inputbox">
+                            <span>Owner's Full Name:</span>
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+
+                        <div class="inputbox">
+                            <span>Pet Name:</span>
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="inputbox">
+                        	<span>Sex</span>
+							<select>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+
+						<span>Pet Type</span>
+							<select id="petType">
+						  		<option value="Cat">Cat</option>
+						  		<option value="Dog">Dog</option>
+						  		<option value="petOther">Others</option>
+							</select>
+
+							<input type="text" id="otherPet" placeholder="Enter Pet Type" style="display:none;">
+
+                        </div>
+<script>
+	var petSelect = document.getElementById("petType");
+	var otherInputs = document.getElementById("otherPet");
+
+	petSelect.addEventListener("change", function() {
+	  if (this.value === "petOther") {
+	    otherInputs.style.display = "inline-block";
+	  } else {
+	    otherInputs.style.display = "none";
+	    otherInputs.value = "";
+	  }
+	});
+</script>
+	
+                        <div class="inputbox">
+                            <span>Type of Grooming Service:</span>
+                            <select id="groomtType">
+                            	<option>Full Grooming</option>
+                            	<option>Bath and Brush</option>
+                            	<option>Nail Trimming</option>
+                            	<option>Ear Cleaning</option>
+                            	<option>Teeth Cleaning</option>
+                                <option value="others">Others Specify</option>
+                            </select>
+
+                            <input type="text" id="otherGroom" placeholder="Specify Groom Type" style="display:none;">
+                        </div>
+<script>
+    var groomSelect = document.getElementById("groomtType");
+    var otherInput = document.getElementById("otherGroom");
+
+    groomSelect.addEventListener("change", function() {
+      if (this.value === "others") {
+        otherInput.style.display = "inline-block";
+      } else {
+        otherInput.style.display = "none";
+        otherInput.value = "";
+      }
+    });
+</script>
+						<div class="inputbox">
+                            <span>Preferred Appointment:</span>
+                            <input type="date" required>
+                            <input type="time" required>
+
+                        </div>
+
+
+
+
+
+
+                	</div>
+
+
+
+                    <div class="col">
+                    	<a href="index.html" style="float: right; width: 20px; text-align: center;">X</a>
+                        <h4>Billing Address</h4>
+
+                        <div class="inputbox">
+                            <span>Name:</span>
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="inputbox">
+                            <span>Email:</span>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+
+                        <div class="inputbox">
+                            <span>Address:</span>
+                            <input type="text" placeholder="e.g Floor, Unit Number" required>
+                        </div>
+
+                        <div class="inputbox">
+                            <span>City:</span>
+                            <input type="text" placeholder="City / Provice" required>
+                        </div>
+
+
+                        <div class="inputbox">
+                            <span>Zip Code:</span>
+                            <input type="text" placeholder="Zip Code" required>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+                    	
+
+                        <div class="inputbox">
+                            <span>We Accept</span>
+                            <img src="payments.png">
+                        </div>
+
+                        <div class="inputbox">
+                            <span>Name on Card:</span>
+                            <input type="text" placeholder="NAME ON CARD" required>
+                        </div>
+
+                        <div class="inputbox">
+                            <span>Card Number:</span>
+                            <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Proceed To Checkout" class="submit-btn">
+            </form>
+<script>
+	
+function checkout(event){
+	event.preventDefault();
+
+	alert("Appointment Success!");
+
+	window.location.href = "index.html";
+}
+</script>
+
+    </div>
+    
+
+
+</body>
+</html>
+<style>
+	@media screen and (max-width: 768px) {
+    body{
+        font-size: 14px;
+    }
+    p{
+        font-size: 14px;
+    }
+    a{
+        font-size: 14px
+    }
+    h2{
+        font-size: 14px;
+    }
+}
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+#otherPet {
+  margin-top: 10px;
+}
+body{
+	background-color: beige;
+    background-size: contain;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+select{
+	border-radius: 5px;
+}
+.inputbox img{
+    width: 180px;
+    border-radius: 8px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.container form{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    width: 700px;
+    background-color: #D8DDDD;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.container form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container form .row .col{
+    flex: 1 1 250px;
+}
+
+.container form .row .col .inputbox{
+    margin: 15px 0;
+}
+
+.container form .row .col .inputbox span{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.container form .row .col .inputbox input{
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #040404e6;
+    background-color: #ecebe8fa;
+    padding: 10px 15px ;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.container form .row .col .inputbox input:focus{
+    border: 2px solid;
+}
+
+.container form .submit-btn{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+.container form .submit-btn:hover{
+    border: 2px solid black;
+}
+.container h4{
+    margin-top: 35px;
+}
+.container a{
+    border-radius: 5px;
+    padding: 2px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    float: left;
+}
+.container a:hover{
+    border: 2px solid black;
+}
+</style>
